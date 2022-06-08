@@ -8,11 +8,11 @@ namespace GamesSnake
     public class MaTran
     {
         /// <summary>
-        /// giá trị 0: không có vật cảng nào
+        /// giá trị 0: không có vật cản nào
         /// giá trị 1: vật cản động vào thì chết :D
         /// giá trị 2: thức ăn, ăn vào tăng nút lên +1
         /// </summary>
-        int[,] mt = new int[50, 50];//độ rộng tối đa 60*60
+        int[,] mt = new int[50, 50];//độ rộng tối đa 50*50
         public MaTran()
         {
  
@@ -63,7 +63,7 @@ namespace GamesSnake
         /// 1:di chuyển ko họp lệ -> chết.
         /// 2:thức ăn ->tăng nút.
         /// </summary>
-        /// <param name="p">đầu con rắn đang ở vị trí p này :D</param>
+        /// <param name="p">đầu con rắn đang ở vị trí p này </param>
         public int Check(Point p)
         {
             try

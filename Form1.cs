@@ -12,7 +12,7 @@ namespace GamesSnake
 {
     public partial class Form1 : Form
     {
-        VatCan vc;
+       
         Graphics g;
         snake conRan;
         MaTran phamVi;
@@ -31,8 +31,6 @@ namespace GamesSnake
             gameOver = GameOver;
             congDiem = CongDiem;
             ketThuc = KetThuc;
-            vc = new VatCan(g);
-            vc.DocFile("level1.lev");
             reset();
         }
 
@@ -46,7 +44,7 @@ namespace GamesSnake
             DiemLabel.Text = (int.Parse(DiemLabel.Text) + 10).ToString();
             if ((int.Parse(DiemLabel.Text) % 50 == 0))
             {
-                conRan.TangTocDo(20);
+                conRan.TangTocDo(30);
                 LevelLabel.Text = (int.Parse(LevelLabel.Text) + 1).ToString();
             }
             //điểm cao nhất
@@ -78,7 +76,7 @@ namespace GamesSnake
                 }
                 else if (temp == 2)
                 {
-                    conRan.add(); conRan.add(); conRan.add();
+                    conRan.add();
                     phamVi.Change(thucAn.ToaDo, 0);
                     do
                     {
@@ -157,14 +155,12 @@ namespace GamesSnake
             if (conRan != null) conRan.Dispose();
             conRan = new snake(g, new Point(10, 5), Brushes.Red, Brushes.LightBlue, Pens.BlueViolet);
             conRan.GoiSuLi += new snake.thaydoi(conRan_GoiSuLi);
-            phamVi.Change(vc.vitri, 1);
             do
             {
                 thucAn.TaoDiem();
             } while (!phamVi.avail(thucAn.ToaDo));
             phamVi.Change(thucAn.ToaDo, 2);
             g.Clear(Color.White);
-            vc.draw();
             DiemLabel.Text = "0";
             LevelLabel.Text = "1";
             conRan.ve();
@@ -173,7 +169,6 @@ namespace GamesSnake
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            vc.draw();
             conRan.ve();
             thucAn.redraw();
         }
@@ -212,6 +207,16 @@ namespace GamesSnake
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

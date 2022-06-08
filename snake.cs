@@ -73,8 +73,8 @@ namespace GamesSnake
             for (int i = doDai; i >0; i--)
                 viTri[i] = new Point((vTri.X-i), vTri.Y);
             diChuyen = DiChuyen.phai;
-            tocDo = new Timer(200);
-            tocDo.Enabled = false;
+            tocDo = new Timer(300);
+            tocDo.Enabled = false;//cho phép tăng tốc= false
             tocDo.Elapsed += new ElapsedEventHandler(tocDo_Elapsed);
         }
         #region các phương thức 
@@ -128,7 +128,7 @@ namespace GamesSnake
             //gọi ủy quyền
             if (GoiSuLi != null)
             {
-                //vi mang vi tri bat dau tu 1 nen ta chuyen lai bat dau tu ko
+                //vi mang vi tri bat dau tu 1 nen ta chuyen lai bat dau tu 0
                 Point[] vtr = new Point[doDai];
                 for (int i = 1; i <= doDai; i++)
                     vtr[i - 1] = viTri[i];

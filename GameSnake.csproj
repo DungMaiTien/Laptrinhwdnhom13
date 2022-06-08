@@ -108,7 +108,6 @@
     <Compile Include="render.cs" />
     <Compile Include="snake.cs" />
     <Compile Include="ThucAn.cs" />
-    <Compile Include="VatCan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1258410001_ksnake.ico" />
